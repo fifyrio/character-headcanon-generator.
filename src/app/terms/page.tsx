@@ -141,7 +141,7 @@ export default function TermsOfService() {
                 If you have any questions about these Terms of Service, please contact us at:
               </p>
               <div className="mt-4 p-4 bg-gray-100 dark:bg-gray-700 rounded-lg">
-                <p className="text-gray-900 dark:text-white font-medium">Email: support@chat-mentor.com</p>
+                <p className="text-gray-900 dark:text-white font-medium">Email: support@ai-character-headcanon-generator.com</p>
               </div>
             </section>
           </div>
