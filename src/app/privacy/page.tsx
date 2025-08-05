@@ -1,4 +1,13 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy - AI Character Headcanon Generator',
+  description: 'Privacy Policy for AI Character Headcanon Generator. Learn how we collect, use, and protect your personal information.',
+  alternates: {
+    canonical: 'https://www.ai-character-headcanon-generator.com/privacy',
+  },
+}
 
 export default function PrivacyPolicy() {
   return (

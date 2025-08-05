@@ -1,4 +1,13 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Terms of Service - AI Character Headcanon Generator',
+  description: 'Terms of Service for AI Character Headcanon Generator. Read our terms and conditions for using our AI-powered character creation tool.',
+  alternates: {
+    canonical: 'https://www.ai-character-headcanon-generator.com/terms',
+  },
+}
 
 export default function TermsOfService() {
   return (
