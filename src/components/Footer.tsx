@@ -66,6 +66,17 @@ export default function Footer() {
                   All in AI Tools
                 </a>
               </li>
+              <li>
+                <a 
+                  href="https://game-sprunki.com/" 
+                  title="Game Sprunki"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 dark:text-gray-400 hover:text-material-green-500 transition-colors"
+                >
+                  Game Sprunki
+                </a>
+              </li>
             </ul>
           </div>
 
