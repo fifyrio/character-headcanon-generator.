@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const characters = [
   'Harry Potter', 'Sherlock Holmes', 'Luke Skywalker',
@@ -49,6 +49,18 @@ export default function CharacterGenerator() {
   const [generatedHeadcanon, setGeneratedHeadcanon] = useState('')
   const [isGenerating, setIsGenerating] = useState(false)
   const [outputMarkdown, setOutputMarkdown] = useState(false)
+  const [lastGenerateTime, setLastGenerateTime] = useState(0)
+  const [remainingCooldown, setRemainingCooldown] = useState(0)
+
+  // Cooldown timer effect
+  useEffect(() => {
+    if (remainingCooldown > 0) {
+      const timer = setTimeout(() => {
+        setRemainingCooldown(remainingCooldown - 1)
+      }, 1000)
+      return () => clearTimeout(timer)
+    }
+  }, [remainingCooldown])
 
   const handleCharacterSelect = (character: string) => {
     setSelectedCharacter(character)
@@ -63,8 +75,21 @@ export default function CharacterGenerator() {
   }
 
   const handleGenerate = async () => {
+    const currentTime = Date.now()
+    const timeSinceLastGenerate = currentTime - lastGenerateTime
+    const cooldownTime = 5000 // 5 seconds in milliseconds
+
+    // Check if still in cooldown period
+    if (timeSinceLastGenerate < cooldownTime) {
+      const remaining = Math.ceil((cooldownTime - timeSinceLastGenerate) / 1000)
+      setRemainingCooldown(remaining)
+      return
+    }
+
     setIsGenerating(true)
     setGeneratedHeadcanon('')
+    setLastGenerateTime(currentTime)
+    setRemainingCooldown(0)
     
     try {
       const character = selectedCharacter || customCharacter
@@ -242,7 +267,7 @@ export default function CharacterGenerator() {
             {/* Generate Button */}
             <button
               onClick={handleGenerate}
-              disabled={isGenerating || (!selectedCharacter && !customCharacter)}
+              disabled={isGenerating || (!selectedCharacter && !customCharacter) || remainingCooldown > 0}
               className="w-full bg-material-green-600 hover:bg-material-green-700 disabled:bg-gray-600 disabled:cursor-not-allowed text-white font-semibold py-4 px-6 rounded-lg transition-colors flex items-center justify-center space-x-2"
             >
               {isGenerating ? (
@@ -250,6 +275,8 @@ export default function CharacterGenerator() {
                   <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
                   <span>Generating...</span>
                 </>
+              ) : remainingCooldown > 0 ? (
+                <span>Wait {remainingCooldown}s...</span>
               ) : (
                 <span>Generate Headcanon</span>
               )}
