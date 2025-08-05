@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 
 export default function Header() {
-  const [language, setLanguage] = useState('English')
   const [isDarkMode, setIsDarkMode] = useState(true)
 
   // Toggle dark mode
@@ -30,17 +29,6 @@ export default function Header() {
       </div>
       
       <div className="flex items-center space-x-4">
-        <div className="relative">
-          <select 
-            value={language}
-            onChange={(e) => setLanguage(e.target.value)}
-            className="bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border rounded px-3 py-1 text-gray-900 dark:text-white text-sm appearance-none pr-8 transition-colors"
-          >
-            <option value="English">🇺🇸 English</option>
-            <option value="Chinese">🇨🇳 中文</option>
-          </select>
-        </div>
-        
         <button 
           onClick={toggleDarkMode}
           className="w-8 h-8 rounded-full bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border flex items-center justify-center hover:border-material-green-500 transition-colors"
