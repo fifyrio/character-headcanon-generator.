@@ -10,14 +10,14 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Free AI Character Headcanon Generator',
-  description: 'Generate unique and engaging character headcanons with our AI-powered tool. Perfect for fanfiction writers, roleplayers, and character enthusiasts. Create personality traits, backstories, and relationships instantly.',
-  keywords: ['AI character generator', 'character headcanon', 'fanfiction tools', 'roleplaying character development', 'customizable headcanons', 'writing style generator', 'personality traits tool', 'character background stories'],
+  description: 'Generate unique character headcanons with AI. Perfect for fanfiction writers and roleplayers. Create personality traits and backstories instantly.',
+  keywords: ['AI character generator', 'character headcanon', 'fanfiction tools', 'roleplay', 'personality traits'],
   alternates: {
     canonical: 'https://www.ai-character-headcanon-generator.com/',
   },
   openGraph: {
     title: 'Free AI Character Headcanon Generator',
-    description: 'Create unique and engaging character headcanons with our AI-powered generator',
+    description: 'Generate unique character headcanons with AI. Perfect for fanfiction writers and roleplayers.',
     url: 'https://www.ai-character-headcanon-generator.com/',
     siteName: 'AI Character Headcanon Generator',
     type: 'website',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Free AI Character Headcanon Generator',
-    description: 'Create unique and engaging character headcanons with our AI-powered generator',
+    description: 'Generate unique character headcanons with AI. Perfect for fanfiction writers and roleplayers.',
   },
 }
 
