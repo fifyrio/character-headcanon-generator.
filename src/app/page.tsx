@@ -3,6 +3,7 @@ import HeroSection from '@/components/HeroSection'
 import HowToUse from '@/components/HowToUse'
 import CharacterGenerator from '@/components/CharacterGenerator'
 import Features from '@/components/Features'
+import Testimonials from '@/components/Testimonials'
 import FAQ from '@/components/FAQ'
 import Footer from '@/components/Footer'
 
@@ -15,6 +16,7 @@ export default function Home() {
       <HowToUse />
       <Features />
       <FAQ />
+      <Testimonials />
       <Footer />
     </main>
   )
