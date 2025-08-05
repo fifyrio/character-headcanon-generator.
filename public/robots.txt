@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.ai-character-headcanon-generator.com/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Disallow crawling of API routes to protect server resources
+Disallow: /api/
+
+# Allow all other content for indexing
+Allow: /privacy
+Allow: /terms
