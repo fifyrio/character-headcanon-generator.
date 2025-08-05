@@ -41,7 +41,7 @@ export default function Footer() {
 
           {/* Product Section */}
           <div>
-            <h3 className="text-gray-900 dark:text-white font-semibold text-lg mb-4">Product</h3>
+            <div className="text-gray-900 dark:text-white font-semibold text-lg mb-4">Product</div>
             <ul className="space-y-3">
               <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-material-green-500 transition-colors">Features</a></li>
               <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-material-green-500 transition-colors">FAQ</a></li>
@@ -50,7 +50,7 @@ export default function Footer() {
 
           {/* Support Section */}
           <div>
-            <h3 className="text-gray-900 dark:text-white font-semibold text-lg mb-4">Support</h3>
+            <div className="text-gray-900 dark:text-white font-semibold text-lg mb-4">Support</div>
             <ul className="space-y-3">
               <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-material-green-500 transition-colors">Help Center</a></li>
               <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-material-green-500 transition-colors">Contact Us</a></li>
@@ -59,7 +59,7 @@ export default function Footer() {
 
           {/* Legal Section */}
           <div>
-            <h3 className="text-gray-900 dark:text-white font-semibold text-lg mb-4">Legal</h3>
+            <div className="text-gray-900 dark:text-white font-semibold text-lg mb-4">Legal</div>
             <ul className="space-y-3">
               <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-material-green-500 transition-colors">Privacy Policy</a></li>
               <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-material-green-500 transition-colors">Terms of Service</a></li>
