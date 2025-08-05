@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 py-16 px-6 transition-colors">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Brand Section */}
           <div className="md:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
@@ -37,6 +37,24 @@ export default function Footer() {
             <ul className="space-y-3">
               <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-material-green-500 transition-colors">Features</a></li>
               <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-material-green-500 transition-colors">FAQ</a></li>
+            </ul>
+          </div>
+
+          {/* Useful Links Section */}
+          <div>
+            <div className="text-gray-900 dark:text-white font-semibold text-lg mb-4">Useful Links</div>
+            <ul className="space-y-3">
+              <li>
+                <a 
+                  href="https://aitoolcenter.com/" 
+                  title="AI Tool Center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 dark:text-gray-400 hover:text-material-green-500 transition-colors"
+                >
+                  AI Tool Center
+                </a>
+              </li>
             </ul>
           </div>
 
