@@ -7,7 +7,7 @@ const openai = new OpenAI({
 
 export async function POST(request: NextRequest) {
   try {
-    const { character, writingStyle, headcanonType, headcanonLength, characterDetails } = await request.json()
+    const { character, writingStyle, headcanonType, headcanonLength, characterDetails, outputMarkdown } = await request.json()
 
     if (!character) {
       return NextResponse.json(
@@ -50,7 +50,9 @@ The headcanon should be ${lengthMap[headcanonLength as keyof typeof lengthMap]} 
 
 ${characterDetails ? `Additional context about the character: ${characterDetails}` : ''}
 
-Make it creative, engaging, and true to the character while adding new interesting details that fans would enjoy. Focus on ${headcanonType.toLowerCase()} and write it ${writingStyle.toLowerCase() === 'normal' ? 'in a balanced way' : writingStyle.toLowerCase() === 'funny' ? 'with humor' : 'with a darker tone'}.`
+Make it creative, engaging, and true to the character while adding new interesting details that fans would enjoy. Focus on ${headcanonType.toLowerCase()} and write it ${writingStyle.toLowerCase() === 'normal' ? 'in a balanced way' : writingStyle.toLowerCase() === 'funny' ? 'with humor' : 'with a darker tone'}.
+
+${outputMarkdown ? 'Format the output in markdown with appropriate headers, bold text, and formatting to make it visually appealing and well-structured.' : 'Provide the output as plain text without any special formatting.'}`
 
     const completion = await openai.chat.completions.create({
       model: "gpt-4o-mini",

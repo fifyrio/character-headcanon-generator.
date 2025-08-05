@@ -7,6 +7,34 @@ const characters = [
   'Batman', 'Spider-Man'
 ]
 
+// Extended list of popular IP characters for random selection
+const popularCharacters = [
+  // Harry Potter
+  'Harry Potter', 'Hermione Granger', 'Ron Weasley', 'Draco Malfoy', 'Severus Snape',
+  // Marvel
+  'Spider-Man', 'Iron Man', 'Captain America', 'Thor', 'Black Widow', 'Hulk', 'Deadpool', 'Wolverine',
+  // DC Comics
+  'Batman', 'Superman', 'Wonder Woman', 'The Flash', 'Green Lantern', 'Aquaman', 'Joker',
+  // Star Wars
+  'Luke Skywalker', 'Princess Leia', 'Han Solo', 'Darth Vader', 'Obi-Wan Kenobi', 'Yoda',
+  // Sherlock Holmes
+  'Sherlock Holmes', 'John Watson', 'Moriarty',
+  // Lord of the Rings
+  'Frodo Baggins', 'Gandalf', 'Aragorn', 'Legolas', 'Gimli', 'Boromir',
+  // Game of Thrones
+  'Jon Snow', 'Daenerys Targaryen', 'Tyrion Lannister', 'Arya Stark', 'Sansa Stark',
+  // Anime/Manga
+  'Naruto Uzumaki', 'Sasuke Uchiha', 'Monkey D. Luffy', 'Goku', 'Vegeta', 'Light Yagami',
+  // Disney
+  'Elsa', 'Anna', 'Simba', 'Mulan', 'Belle', 'Ariel',
+  // Pokemon
+  'Ash Ketchum', 'Pikachu', 'Misty', 'Brock',
+  // Final Fantasy
+  'Cloud Strife', 'Sephiroth', 'Tifa Lockhart',
+  // Other Popular
+  'Indiana Jones', 'James Bond', 'Lara Croft', 'Master Chief', 'Link', 'Zelda'
+]
+
 const writingStyles = ['Normal', 'Funny', 'Dark']
 const headcanonTypes = ['Personality Traits', 'Background Story', 'Relationships', 'Skills & Abilities']
 const headcanonLengths = ['Very Short', 'Short', 'Medium', 'Long']
@@ -20,9 +48,17 @@ export default function CharacterGenerator() {
   const [characterDetails, setCharacterDetails] = useState('')
   const [generatedHeadcanon, setGeneratedHeadcanon] = useState('')
   const [isGenerating, setIsGenerating] = useState(false)
+  const [outputMarkdown, setOutputMarkdown] = useState(false)
 
   const handleCharacterSelect = (character: string) => {
     setSelectedCharacter(character)
+    setCustomCharacter('')
+  }
+
+  const handleRandomCharacter = () => {
+    const randomIndex = Math.floor(Math.random() * popularCharacters.length)
+    const randomCharacter = popularCharacters[randomIndex]
+    setSelectedCharacter(randomCharacter)
     setCustomCharacter('')
   }
 
@@ -44,6 +80,7 @@ export default function CharacterGenerator() {
           headcanonType,
           headcanonLength,
           characterDetails,
+          outputMarkdown,
         }),
       })
 
@@ -79,7 +116,7 @@ export default function CharacterGenerator() {
               <input
                 type="text"
                 placeholder="Enter character name here or choose from the list below..."
-                value={customCharacter}
+                value={selectedCharacter || customCharacter}
                 onChange={(e) => {
                   setCustomCharacter(e.target.value)
                   setSelectedCharacter('')
@@ -101,9 +138,13 @@ export default function CharacterGenerator() {
                     {character}
                   </button>
                 ))}
-                <button className="p-3 rounded-lg border border-light-border dark:border-dark-border bg-white dark:bg-dark-bg text-gray-700 dark:text-gray-300 hover:border-gray-400 dark:hover:border-gray-500 transition-all flex items-center justify-center">
+                <button 
+                  onClick={handleRandomCharacter}
+                  className="p-3 rounded-lg border border-light-border dark:border-dark-border bg-white dark:bg-dark-bg text-gray-700 dark:text-gray-300 hover:border-material-green-500 dark:hover:border-material-green-500 hover:text-material-green-600 dark:hover:text-material-green-400 transition-all flex items-center justify-center"
+                  title="Random Character"
+                >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                   </svg>
                 </button>
               </div>
@@ -181,6 +222,21 @@ export default function CharacterGenerator() {
                 rows={4}
                 className="w-full p-4 bg-white dark:bg-dark-bg border border-light-border dark:border-dark-border rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-material-green-500 resize-none transition-colors"
               />
+            </div>
+
+            {/* Output Format Option */}
+            <div className="flex items-center space-x-3">
+              <label className="flex items-center space-x-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={outputMarkdown}
+                  onChange={(e) => setOutputMarkdown(e.target.checked)}
+                  className="w-4 h-4 text-material-green-600 bg-white dark:bg-dark-bg border-light-border dark:border-dark-border rounded focus:ring-material-green-500 focus:ring-2 transition-colors"
+                />
+                <span className="text-gray-900 dark:text-white text-sm font-medium">
+                  Output markdown format
+                </span>
+              </label>
             </div>
 
             {/* Generate Button */}
