@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 export default function Header() {
   const [isDarkMode, setIsDarkMode] = useState(true)
@@ -23,9 +24,13 @@ export default function Header() {
   return (
     <header className="flex items-center justify-between p-6 bg-white dark:bg-dark-bg border-b border-light-border dark:border-dark-border transition-colors">
       <div className="flex items-center space-x-2">
-        <div className="w-8 h-8 bg-material-green-600 rounded-lg flex items-center justify-center">
-          <span className="text-white font-bold text-sm">AI</span>
-        </div>
+        <Image
+          src="/logo.svg"
+          alt="AI Character Headcanon Generator"
+          width={32}
+          height={32}
+          className="w-8 h-8"
+        />
       </div>
       
       <div className="flex items-center space-x-4">

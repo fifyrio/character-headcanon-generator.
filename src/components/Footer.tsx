@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Footer() {
   return (
@@ -8,9 +9,13 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="md:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-12 h-12 bg-material-green-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">AI</span>
-              </div>
+              <Image
+                src="/logo.svg"
+                alt="AI Character Headcanon Generator"
+                width={48}
+                height={48}
+                className="w-12 h-12"
+              />
             </div>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
               A powerful AI-driven platform for generating unique and engaging character headcanons

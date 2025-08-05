@@ -7,6 +7,11 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'AI Character Headcanon Generator',
   description: 'Create unique and engaging character headcanons with our AI-powered generator. Perfect for fanfiction writers, roleplayers, and character enthusiasts.',
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
 }
 
 export default function RootLayout({
