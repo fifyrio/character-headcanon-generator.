@@ -55,6 +55,17 @@ export default function Footer() {
                   AI Tool Center
                 </a>
               </li>
+              <li>
+                <a 
+                  title="All The Best AI Tools" 
+                  href="https://allinai.tools"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-600 dark:text-gray-400 hover:text-material-green-500 transition-colors"
+                >
+                  All in AI Tools
+                </a>
+              </li>
             </ul>
           </div>
 
