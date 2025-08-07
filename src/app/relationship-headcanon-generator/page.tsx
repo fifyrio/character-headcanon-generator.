@@ -62,7 +62,7 @@ export default function RelationshipHeadcanonGeneratorPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-8 sm:mb-12">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              Relationship Headcanon Generator
+              Free Relationship Headcanon Generator
             </h1>
             <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               AI-powered tool that helps you create your own unique character relationships.
