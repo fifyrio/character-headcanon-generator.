@@ -58,3 +58,6 @@ The project currently contains:
 - `CLAUDE.md` - This file
 
 Once initialized, typical Next.js structure should be followed with components in appropriate directories.
+
+## SEO
+The seo Title of the page should be controlled within 60 characters, the Description within 160 characters, and the Keywords within 100 characters.
