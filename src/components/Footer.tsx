@@ -31,11 +31,10 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Tools Section */}
+          {/* Functions Section */}
           <div>
-            <div className="text-gray-900 dark:text-white font-semibold text-lg mb-4">Tools</div>
+            <div className="text-gray-900 dark:text-white font-semibold text-lg mb-4">Functions</div>
             <ul className="space-y-3">
-              <li><Link href="/" className="text-gray-600 dark:text-gray-400 hover:text-material-green-500 transition-colors">Character Headcanon Generator</Link></li>
               <li><Link href="/relationship-headcanon-generator" className="text-gray-600 dark:text-gray-400 hover:text-material-green-500 transition-colors">Relationship Headcanon Generator</Link></li>
             </ul>
           </div>

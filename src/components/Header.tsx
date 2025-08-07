@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Header() {
   const [isDarkMode, setIsDarkMode] = useState(true)
@@ -33,7 +34,24 @@ export default function Header() {
         />
       </div>
       
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center space-x-6">
+        {/* Navigation Links */}
+        <nav className="flex items-center space-x-6">
+          <Link 
+            href="/" 
+            className="text-gray-700 dark:text-gray-300 hover:text-material-green-600 dark:hover:text-material-green-400 transition-colors font-medium"
+          >
+            Home
+          </Link>
+          <Link 
+            href="/relationship-headcanon-generator" 
+            className="text-gray-700 dark:text-gray-300 hover:text-material-green-600 dark:hover:text-material-green-400 transition-colors font-medium"
+          >
+            Relationship Generator
+          </Link>
+        </nav>
+        
+        {/* Dark Mode Toggle */}
         <button 
           onClick={toggleDarkMode}
           className="w-8 h-8 rounded-full bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border flex items-center justify-center hover:border-material-green-500 transition-colors"
